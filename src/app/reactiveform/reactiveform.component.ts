@@ -1,13 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-reactiveform',
+  templateUrl: './reactiveform.component.html',
+  styleUrls: ['./reactiveform.component.css']
 })
-export class AppComponent {
-  title = 'Reactiveform';
+export class ReactiveformComponent implements OnInit {
 
   registrationForm : FormGroup;
 
@@ -22,6 +21,9 @@ export class AppComponent {
     {
       validators: this.MustMatch('password','confirmpassword')
     }) 
+  }
+  
+  ngOnInit(): void {
   }
   
 
@@ -42,5 +44,5 @@ export class AppComponent {
       }
     }
   }
-  
+
 }
